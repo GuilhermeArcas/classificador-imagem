@@ -36,3 +36,5 @@ model.fit(dataset, epochs=10)
 
 # Salvar modelo
 model.save("model/modelo.h5")
+
+print(dataset.class_names)
