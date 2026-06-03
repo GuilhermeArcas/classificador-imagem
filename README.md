@@ -74,6 +74,7 @@ npm run dev
 
 A aplicação estará disponível em:
 👉 http://localhost:5173
+```
 
 ## Dataset
 
@@ -85,7 +86,7 @@ bicicleta
 
 As imagens foram obtidas a partir de fontes públicas (como Kaggle) e organizadas manualmente em diretórios, permitindo o carregamento automático pelo TensorFlow.
 
-🧠 Arquitetura do Modelo
+## 🧠 Arquitetura do Modelo
 
 O modelo utiliza uma CNN simples composta por:
 
