@@ -1,13 +1,34 @@
+import { useState } from "react";
+
 function App() {
+
+  const [preview, setPreview] = useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      setPreview(URL.createObjectURL(file));
+    }
+  };
+
   return (
     <div>
       <h1>Classificador de Imagens</h1>
 
-      <p>
-        Faça upload de uma imagem para classificação.
-      </p>
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleFileChange}
+      />
 
-      <input type="file" />
+      {preview && (
+        <img
+          src={preview}
+          alt="preview"
+          width="300"
+        />
+      )}
 
       <button>
         Classificar
