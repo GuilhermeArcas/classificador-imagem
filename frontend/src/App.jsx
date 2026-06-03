@@ -1,38 +1,28 @@
 import { useState } from "react";
+import { api } from "./services/api";
 
 function App() {
 
-  const [preview, setPreview] = useState(null);
+  const [result, setResult] = useState(null);
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-
-    if (file) {
-      setPreview(URL.createObjectURL(file));
-    }
+  const handleClassify = async () => {
+    alert("Integração com API em desenvolvimento");
   };
 
   return (
     <div>
-      <h1>Classificador de Imagens</h1>
+      <h1>Classificador de Imagens CNN</h1>
 
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileChange}
-      />
-
-      {preview && (
-        <img
-          src={preview}
-          alt="preview"
-          width="300"
-        />
-      )}
-
-      <button>
+      <button onClick={handleClassify}>
         Classificar
       </button>
+
+      {result && (
+        <div>
+          <h2>Resultado</h2>
+          <p>{result.classe}</p>
+        </div>
+      )}
     </div>
   );
 }
